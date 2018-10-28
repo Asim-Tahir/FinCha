@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>Form Sending Success</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="favicon" content="favicon.ico">
+
+  <link rel="icon" href="Media/favicon.ico" type="image/png">
+  <link rel="stylesheet" href="CSS/normalize.css"/>
+  <link rel="stylesheet" href="CSS/FinChaStyle.css">
+
+ </head>
+
+ <style>
+  body{
+   font-family: Sofia Pro;
+   overflow: hidden;
+  }
+
+  h1{
+   color: greenyellow;
+   text-align: center;
+  }
+
+  p{
+   color:rgb(7, 135, 255);
+   padding-top:20px;
+   text-align: center
+  }
+
+ /*================PaperFly Dinamik Stilleri=================*/
+  #PaperFly{
+   z-index: -2;
+   width: 200px;
+   fill-opacity: .5;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   /*margin-left: 42%;*/
+   user-select: none;
+   -webkit-user-drag: none;
+   cursor: pointer;
+   animation: FlyPaperAnim 1.2s;
+   -webkit-animation: FlyPaperAnim 1.2s;
+   overflow: hidden;
+  }
+
+  @keyframes FlyPaperAnim{
+   0% {transform: rotate(10deg) translate(-1100px,800px);}
+  }
+
+  @-webkit-keyframes FlyPaperAnim{
+    0% {transform: rotate(10deg) translate(-1100px,800px);}
+  }
+
+  #PaperFly:active{
+   animation: PaperFlyReturnAnim 1s;
+   -webkit-animation: PaperFlyReturnAnim 1s;
+  }
+  /*===========================================================*/
+ </style>
+
+<body>
+ <h1>Form Gönderimi Başarılı</h1>
+ <img id="PaperFly" src="Media/SendIcon.svg" alt="Gönderim Başarılı Resmi"
+  onmouseup="window.location='Index.html'">
+ <p>Sayfaya Geri Dönmek İçin Uçağa Tıklayın..</p>
+</body>
+</html>

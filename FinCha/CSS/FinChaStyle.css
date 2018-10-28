@@ -1,0 +1,338 @@
+body{
+ background-color: rgb(30, 30, 30);
+	color: white;
+	font-family: "Sofia Pro";
+	user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+ -webkit-user-drag: none;
+}
+
+div{
+ width: 500px;
+}
+
+#Baslik{
+	margin: 10px;
+ margin-left: -1%;
+ margin-top: 1%;
+	text-align: center;
+	color: #0099ff;
+	font-family: "Sofia Pro";
+}
+
+/*==============Retry Button'un Dinamik Stilleri===============*/
+
+#retrybutton{
+	width: 50px;
+ margin-top: -2%;
+ margin-left: 20px;
+ margin-right: 0;
+ float: left;
+	-webkit-user-drag: none;
+ transition: transform .8s;
+ -webkit-transition: transform .8s;
+}
+
+#retrybutton:hover{
+	cursor: pointer;
+}
+
+#retrybutton:active{
+	transform: rotate(-360deg);
+}
+
+@keyframes retryanim{
+	0%   {transform:rotate(0);}
+	100% {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes retryanim{
+	0%   {transform:rotate(0);}
+	100% {transform: rotate(360deg);}
+}
+/*=============================================================*/
+
+/*====================Girdi Dinamik Stilleri===================*/
+.girdi{
+	float: left;
+	border: none;
+	border-radius: 20px;
+	height: 30px;
+	text-align: center;
+	float: left;
+	margin-top: 5px;
+	outline: none;
+ background-color: #ffffffa9;
+ background-blend-mode: screen;
+ transition: border-color 1s;
+ -webkit-transition: border-color 1s;
+}
+
+.girdi:focus{
+	border: 2px solid #0099f2;
+}
+
+.girdi:valid{
+ border: 2.5px solid #0099f2;
+}
+
+.girdi:invalid{
+	border: 2.5px solid #f20048;
+}
+
+.girdi::selection{
+ background-color: #008ae6aa
+}
+/*========================================================*/
+
+#FinChaGir{
+ font-size: 16pt;
+ font-family: Bliss Pro Light;
+ letter-spacing: 1px;
+ outline: none;
+ border-top: none; border-left: none; border-right: none;
+ width: 160px;
+ float: left;
+ text-align: center;
+ border-radius: 0px 0px 2px 2px;
+ border: none;
+ border-bottom: 2px solid #0099f2;
+ color: white;
+ background: none !important;
+ transition: width 1s, border-bottom-color .8s;
+ -webkit-transition: width 1s, border-bottom-color .8s;
+}
+
+#FinChaGir:focus{
+ animation: FocusFinChaGir 1s;
+ -webkit-animation: FocusFinChaGir 1s;
+ width: 200px !important;
+}
+
+#FinChaGir:invalid{
+ border-bottom-color: #f20048;
+}
+
+#FinChaGir:valid{
+ border-bottom-color: #008ae6;
+}
+
+#FinChaGir::selection{
+ background-color: #6dc5ff;
+ color: white;
+}
+
+input {
+ background: #1e1e1e;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active{
+ -webkit-box-shadow: 0 0 0px 9999px #1e1e1e inset !important;
+ -webkit-box-shadow: inset 0 0 0px 9999px #1e1e1e !important;
+ -webkit-text-fill-color: #e9f6fd;
+}
+
+.metin{
+	width: 60px;
+	font-size: 12pt;
+	margin-right: 10px;
+	float: left;
+	text-align: center;
+}
+
+/*=================Buton Dinamik Stilleri===================*/
+#SendIcon{
+	width: 80px;
+	margin-top: 0px;
+ margin-bottom: 0px;
+ float: right;
+ user-select: none;
+ -webkit-user-drag: none;
+ cursor: pointer;
+ /*transition: transform .85s;
+ -webkit-transition: transform .85s;*/
+}
+
+#SendIcon:active{
+ /*transform: translate(120px,-60px) rotate(-20deg);*/
+ animation: SendIconAnim .85s;
+ -webkit-animation: SendIconAnim .85s;
+}
+
+@keyframes SendIconAnim {
+ 100% { transform: translate(120px,-60px) rotate(-20deg);}
+}
+
+@-webkit-keyframes SendIconAnim {
+ 100% { transform: translate(120px,-60px) rotate(-20deg);}
+}
+/*============================================================*/
+
+#EdIsareti {
+ font-size: 16pt;
+ text-align: center;
+ margin: 10px 5px 5px;
+ float:left;
+ animation: EdFade 1s 1;
+ -webkit-animation: EdFade 1s 1;
+ color:#008ae6;
+}
+
+@keyframes EdFade{
+ from {color: #f20048;}
+ to {color: #008ae6;}
+}
+
+@-webkit-keyframes EdFade{
+ from {color: #f20048;}
+ to {color: #008ae6;}
+}
+
+#FinCha{
+ margin-top: 15px;
+ margin-left: auto;
+ margin-right: auto;
+ /*height: 280px;  Asıl height Değeri*/
+ height: 330px;;
+ width: 510px;
+ overflow: hidden;
+ animation: FinchaGiris 1s 1;
+ -webkit-animation: FinchaGiris 1s 1;
+}
+
+@keyframes FinchaGiris{
+ from {opacity: 0; transform: translateY(-20px);}
+ to {opacity: 1; transform: translateY(0px);}
+}
+
+@-webkit-keyframes FinchaGiris{
+ from {opacity: 0; transform: translateY(-20px);}
+ to {opacity: 1; transform: translateY(0px);}
+}
+
+#FinchaBilgi{
+ text-align: center;
+ margin-left: 4.5%;
+ margin-right: 0;
+ animation: VisibleFade 1s 1;
+ -webkit-animation: VisibleFade 1s 1;
+}
+
+@keyframes VisibleFade{
+ 0% {opacity: 0}
+ 15% {opacity: 0;}
+ 100% {opacity: 1;}
+}
+
+@-webkit-keyframes VisibleFade{
+ 0% {opacity: 0}
+ 15% {opacity: 0;}
+ 100% {opacity: 1;}
+}
+
+#YatayAyirac{
+ color:white;
+ z-index: 2;
+ border: 2px solid white;
+ border-radius: 30px;
+ animation: Fallin 1s 1;
+ -webkit-animation: Fallin 1s 1;
+}
+
+@keyframes Fallin{
+ from {transform: translateY(-30px);}
+ to {transform: translateY(0px);}
+}
+
+@-webkit-keyframes Fallin{
+ from {transform: translateY(-30px);}
+ to {transform: translateY(0px);}
+}
+
+#FinchaImage{
+ border: none;
+ border-radius: 50px;
+}
+
+#Fincha_Bolumu{
+	height: 100px;
+ width: auto;
+ letter-spacing: 2px;
+ float: left;
+ font-size: 50pt;
+ text-align: center;
+ font-family: Bliss Pro Light;
+
+ animation: FinchaAnim 1s;
+ -webkit-animation: FinchaAnim 1s;
+}
+
+@keyframes FinchaAnim{
+ 0% {opacity: 0;}
+ 100% {opacity: 1;}
+}
+
+@-webkit-keyframes FinchaAnim{
+ 0% {opacity: 0;}
+ 100% {opacity: 1;}
+}
+
+.Uyari{
+	color: rgb(255, 217, 0);
+}
+
+#Uyari{
+	color: #fff;
+	width: 260px;
+	height: 20px;
+	font-size: 12pt;
+	padding: 10px;
+	border: none;
+	border-radius: 30px;
+	text-align: center;
+ float: left;
+	margin-left: 20px;
+	background-color: #f93737dd;
+	visibility: hidden;
+ transition: opacity 1s;
+ animation: BlinkAlert 1.6s infinite;
+
+ -webkit-transition: opacity 1s;
+ -webkit-animation: BlinkAlert 1.6s infinite;
+}
+
+@keyframes BlinkAlert{
+ 0% {opacity: .3;}
+ 50% {opacity: 1;}
+ 100% {opacity: .3;}
+}
+
+@-webkit-keyframes BlinkAlert{
+ 0% {opacity: .3;}
+ 50% {opacity: 1;}
+ 100% {opacity: .3;}
+}
+
+#Uyari:hover{
+ animation: steps(3);
+ cursor: pointer;
+}
+
+#UyariKapat{
+	visibility: hidden;
+	float: left;
+	color: white;
+ font-size: 16pt;
+	text-align: center;
+	margin-top: -3px;
+ transition: color .6s, transform .6s;
+ -webkit-transition: color .6s, transform .6s;
+}
+
+#UyariKapat:hover{
+	color: black;
+ cursor: pointer;
+ transform: translateY(-1px) scale(1.2);
+}

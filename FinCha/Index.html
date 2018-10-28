@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]
+[if IE 7]>         <html class="no-js lt-ie9 lt-ie8">        <![endif]
+[if IE 8]>         <html class="no-js lt-ie9">               <![endif]
+[if gt IE 8]>      <html class="no-js">                      <![endif]-->
+<head>
+ <meta charset="utf-8">
+ <title>Fincha | Find Char</title>
+ <meta name="author" content="Asım Tahir KARAKUŞ">
+ <meta name="version" content="1.0">
+ <meta name="keywords" content="HTML,CSS,JavaScript">
+ <meta name="description" content="Captcha Alternative">
+ <meta name="favicon" content="favicon.ico">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <link rel="icon" href="Media/favicon.ico" type="image/png"> <!--#46CCA9 #2B6D58-->
+ <link rel="stylesheet" href="CSS/normalize.css">
+	<link rel="stylesheet" href="CSS/FinChaStyle.css">
+	<script src="JS/FinChaApi.js"></script>
+</head>
+<!--=======================================================================-->
+	<body onload="CreateFincha(); StdDegerAta(); CreateBackground(); FillFinChaGir();">
+  <h2 id=Baslik>Captcha Alternatifi Fincha</h2>
+		<form method="POST" style="user-select: none; margin: auto; width: 480px">
+			<div>
+    <p class="metin">İsim:</p>
+    <input class="girdi" autocomplete="name" required="required" placeholder="İsim" type="text" minlength="3" maxlength="12">
+    <br><br><br>
+   </div>
+
+   <div>
+    <p class="metin">Soyisim:</p>
+    <input class="girdi" autocomplete="family-name" required="required" placeholder="Soyisim" type="text" minlength="3" maxlength="18">
+    <br><br><br>
+   </div>
+
+   <div>
+    <p class="metin">Mail:</p>
+    <input class="girdi" autocomplete="none" required="required" placeholder="Email" type="text" minlength="5" maxlength="16">
+     <span id="EdIsareti">@</span>
+
+    <input class="girdi" list="girdimaildroplist" autocomplete="none" required="required" placeholder="mail.com" type="text" minlength="5" maxlength="12">
+    <datalist id="girdimaildroplist">
+     <option value="gmail.com"/>
+     <option value="hotmail.com"/>
+     <option value="outlook.com"/>
+     <option value="mail.com"/>
+     <option value="mynet.com"/>
+     <option value="zoho.com"/>
+     <option value="yahoo.com"/>
+     <option value="proton.com"/>
+     <option value="proton.com"/>
+     <option value="yandex.mail"/>
+    </datalist>
+
+    <br><br><br>
+   </div>
+		</form> <!-- İsim Soyisim Mail etc. -->
+
+  <form>
+				<div id="FinCha">
+     <span id="FinchaBilgi">Aşağıda Gördüğünüz Karakter-Sayı Dizisini Kutucuğa Giriniz:</span>
+     <hr id="YatayAyirac">
+      <canvas id="FinchaImage" height="100px" width="350px" style="float:left">
+      </canvas><br><br>
+      <!-- <div id="Fincha_Bolumu"></div> -->
+      <img id="retrybutton" src="Media/RetryIcon.svg" title="Yeni Bir FinCha Üret" alt="FinCha'yı Yeniden Üret" onmouseup="
+       ClearCanvas();
+       CreateFincha();
+       CreateBackground();
+       document.getElementById('Uyari').style.visibility = 'hidden';
+       document.getElementById('UyariKapat').style.visibility = 'hidden';
+       document.getElementById('FinChaGir').value = '';
+       document.getElementById('FinChaGir').focus(this)">
+       <br><br><br><br><br>
+      <input id="FinChaGir" autofill="none" required="required" type="text" minlength="5" maxlength="6">
+
+      <div id="GecersizCaptcha">
+       <div id="Uyari" onclick="document.getElementById('FinChaGir').focus(this)">
+        <span id="UyariKapat" onclick="
+         this.parentElement.style.visibility='hidden',
+         this.style.visibility='hidden'">&Cross;
+        </span>
+        <span class="Uyari">Uyarı! </span><span id="UyariMetin">Geçersiz Giriş...</span>
+       </div>
+      </div>
+     <img id="SendIcon" src="Media/SendIcon.svg" alt="Gönder Butonu" title="Göndermek İçin Tıklayınız" onmousedown="CheckFincha()" onclick="document.getElementById('FinChaGir').focus(this)">
+    </div>
+		</form>
+
+	</body>
+</html>
