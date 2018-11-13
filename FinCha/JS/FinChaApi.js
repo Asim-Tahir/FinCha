@@ -22,7 +22,7 @@ var Characters = ['a','b','c','d','e','f','g','ğ','h','ı','i','j','k','l','m',
 
 function CreateFincha() {//:Working:
  var loopiteration = GenerateRandomNumber(5, 6), //Generate Number 5 or 6
-				 FinchaValue=[],FillerFincha=[];
+	    FinchaValue=[],FillerFincha=[];
 
  for (var i=0;i<loopiteration;i++){//FinCha Create Here
   FinchaValue.push(Characters[GenerateRandomNumber(0,Characters.length-1)]); //for Real Fincha
@@ -37,11 +37,8 @@ function CreateFincha() {//:Working:
  ctx.fillStyle = GenerateRandomColor("HEX") + GenerateAlpha("HEXA");
  ctx.font = "55pt Bliss Pro Light";
  ctx.textAlign = "center";
- //ctx.strokeText(FinchaValue.join(""), document.getElementById('FinchaImage').width/2, document.getElementById('FinchaImage').height/1.4);
  ctx.fillText(FinchaValue.join(""), document.getElementById('FinchaImage').width/2, document.getElementById('FinchaImage').height/1.4);
-
- //==================================================================================
-
+ //=================================================================================
  return FinchaText;
 }
 
@@ -63,9 +60,9 @@ function CheckFincha(Directing_Site_Address = "Success.html") { //:Not Working:
     document.getElementById('Uyari').style.visibility = 'hidden';
     document.getElementById('UyariKapat').style.visibility = 'hidden';
 
-    if(typeof(Directing_Site_Address) !== "string")
+    if(typeof(Directing_Site_Address) !== "string"){
      console.error("Yönlendirdiğiniz Site Adresini Karakter Katarı(String) Biçiminde Giriniz.");
-
+    }
     else{
      document.getElementById('FinChaGir').value = '';
      window.location = Directing_Site_Address;
@@ -205,6 +202,32 @@ function GenerateAlpha(ReqColorType="HEXA"){ //:Working:
 
 function CreateBackground() {//:Working:
  document.getElementById('FinchaImage').style.backgroundColor = GenerateRandomColor("HEX");
+
+ //========================================================================
+ /*var warp = new Warp({ :FixThis:
+  input_canvas: $('#input_canvas').get(0),
+  viewport_canvas: $('#vp_canvas').get(0),
+  top: 100,
+  left: 100,
+});
+
+$('#vp_canvas').on('mousemove', warp, function( event ) {
+ var warp = event.data;
+ var cx = 200, cy = 200;
+
+ // calculate relative coords
+ var x = event.pageX - $(this).offset().left + warp.options.left;
+ var y = event.pageY - $(this).offset().top + warp.options.top;
+
+ draw_text(warp.options.input_canvas, x, y);
+
+ warp.deform({
+  center: {x: cx, y: cy},
+  radius: 150,
+  angle: 45,
+ });
+});*/
+ //========================================================================
 
  var ctx = document.getElementById('FinchaImage').getContext("2d");
  ctx.fillStyle = GenerateRandomColor("HEX");
